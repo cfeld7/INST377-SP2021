@@ -1,5 +1,5 @@
 {
-  "name": "inst377-fa2020",
+  "name": "package.json",
   "version": "1.0.0",
   "description": "Repository for INST377 Dynamic Web Applications Fall 2020 at UMD",
   "main": "index.js",
@@ -31,14 +31,25 @@
     "recursive-readdir": "^2.2.2"
   },
   "devDependencies": {
-    "email-validator": "^2.0.4",
-    "html-validate": "^3.0.0",
     "cypress": "^4.12.1",
     "cypress-html-validate": "^1.2.2",
     "cypress-wait-until": "^1.7.1",
-    "eslint": "^7.4.0",
+    "email-validator": "^2.0.4",
+    "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-cypress": "^2.11.1",
-    "eslint-plugin-import": "^2.22.0"
-  }
+    "eslint-plugin-import": "^2.22.0",
+    "html-validate": "^3.0.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfeld7/INST377-SP2021.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cfeld7/INST377-SP2021/issues"
+  },
+  "homepage": "https://github.com/cfeld7/INST377-SP2021#readme"
 }
