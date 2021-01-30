@@ -40,7 +40,6 @@
     "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-import": "^2.22.0",
     "html-validate": "^3.0.0"
-<<<<<<< HEAD
   },
   "directories": {
     "doc": "docs"
@@ -53,7 +52,4 @@
     "url": "https://github.com/cfeld7/INST377-SP2021/issues"
   },
   "homepage": "https://github.com/cfeld7/INST377-SP2021#readme"
-=======
-  }
->>>>>>> bba0b7e7edfd42b758e82be93c27e1fb4f82d0e4
 }
