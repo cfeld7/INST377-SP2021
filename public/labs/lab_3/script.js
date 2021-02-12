@@ -1,32 +1,32 @@
 /* Put your javascript in here */
 const listContainer = document.querySelector('.images');
 
-function shiftLeft() {
-  const lastThree = Array.from(listContainer.children).slice(4, 7).reverse();
-  lastThree.forEach((element) => {
+function goLeft() {
+  const last = Array.from(listContainer.children).slice(4, 7).reverse();
+  last.forEach((element) => {
     listContainer.removeChild(element);
     listContainer.insertBefore(element, listContainer.children[0]);
   });
 }
 
-function shiftRight() {
-  const firstThree = Array.from(listContainer.children).slice(0, 3);
-  firstThree.forEach((element) => {
+function goRight() {
+  const first = Array.from(listContainer.children).slice(0, 3);
+  first.forEach((element) => {
     listContainer.removeChild(element);
     listContainer.appendChild(element);
   });
 }
 
-function onLoadOfPage() {
+function loadPage() {
   document
     .querySelector('button.arrow.prev')
     .addEventListener('click', (event) => {
-      shiftLeft();
+      goLeft();
     });
   document
     .querySelector('button.arrow.next')
     .addEventListener('click', (event) => {
-      shiftRight();
+      goRight();
     });
 }
-window.onload = onLoadOfPage;
+window.onload = loadPage;
