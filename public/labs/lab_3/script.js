@@ -1,32 +1,29 @@
 /* Put your javascript in here */
-let i = 1;
-for(let li of carousel.querySelectorAll('li')) {
-  li.style.position = 'relative';
-  li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
-  i++;
+const listContainer = document.querySelector(".images");
+
+function shiftLeft() {
+    const last = Array.from(listContainer.children).slice(4,7).reverse();
+    last.forEach((element) => {
+        listContainenr.removeChild(element);
+        listContainer.insertBefore(element, listContainer.children[0]);
+    });
 }
 
-/* configuration */
-let width = 130; // image width
-let count = 3; // visible images count
 
-let list = carousel.querySelector('ul');
-let listElems = carousel.querySelectorAll('li');
+function goRight() {
+    const first = Array.from(listContainer.children).slice(1, 3)
+    first.forEach((element) => {
+        listContainer.removeChild(element);
+        listContainer.appendChild(element);
+    });
+}
 
-let position = 0; // ribbon scroll position
-
-carousel.querySelector('.prev').onclick = function() {
-  // shift left
-  position += width * count;
-  // can't move to the left too much, end of images
-  position = Math.min(position, 0)
-  list.style.marginLeft = position + 'px';
-};
-
-carousel.querySelector('.next').onclick = function() {
-  // shift right
-  position -= width * count;
-  // can only shift the ribbbon for (total ribbon length - visible count) images
-  position = Math.max(position, -width * (listElems.length - count));
-  list.style.marginLeft = position + 'px';
-};
+function LoadPage(){
+    document.querySelector("button.arrow.prev").addEventListener("click", (event) => (
+        goLeft();
+    });
+    document.querySelector("button.arrow.next").addEventListener("click", (event) => (
+        goRight();
+    });
+}
+window.onload = LoadPage;
