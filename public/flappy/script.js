@@ -3,18 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameDisplay = document.querySelector('.game-container');
   const ground = document.querySelector('.ground-moving');
 
-  let birdLeft = 220;
+  const birdLeft = 220;
   let birdBottom = 100;
-  let gravity = 3;
+  const gravity = 3;
   let isGameOver = false;
-  let gap = 430;
+  const gap = 430;
 
   function startGame() {
     birdBottom -= gravity;
-    bird.style.bottom = birdBottom + "px";
-    bird.style.left = birdLeft + "px";
+    bird.style.bottom = `${birdBottom}px`;
+    bird.style.left = `${birdLeft}px`;
   }
-  let gameTimerId = setInterval(startGame, 20);
+  const gameTimerId = setInterval(startGame, 20);
 
   function control(e) {
     if (e.keyCode === 32) {
@@ -31,25 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function generateObstacle() {
     let obstacleLeft = 500;
-    let randomHeight = Math.random() * 60;
-    let obstacleBottom = randomHeight;
-    const obstacle = document.createElement("div");
-    const topObstacle = document.createElement("div");
+    const randomHeight = Math.random() * 60;
+    const obstacleBottom = randomHeight;
+    const obstacle = document.createElement('div');
+    const topObstacle = document.createElement('div');
     if (!isGameOver) {
-      obstacle.classList.add("obstacle");
-      topObstacle.classList.add("topObstacle");
+      obstacle.classList.add('obstacle');
+      topObstacle.classList.add('topObstacle');
     }
     gameDisplay.appendChild(obstacle);
     gameDisplay.appendChild(topObstacle);
-    obstacle.style.left = obstacleLeft + "px";
-    topObstacle.style.left = obstacleLeft + "px";
-    obstacle.style.bottom = obstacleBottom + "px";
-    topObstacle.style.bottom = obstacleBottom + gap + "px";
+    obstacle.style.left = `${obstacleLeft}px`;
+    topObstacle.style.left = `${obstacleLeft}px`;
+    obstacle.style.bottom = `${obstacleBottom}px`;
+    topObstacle.style.bottom = `${obstacleBottom + gap}px`;
 
     function moveObstacle() {
       obstacleLeft -= 2;
-      obstacle.style.left = obstacleLeft + "px";
-      topObstacle.style.left = obstacleLeft + "px";
+      obstacle.style.left = `${obstacleLeft}px`;
+      topObstacle.style.left = `${obstacleLeft}px`;
 
       if (obstacleLeft === -60) {
         clearInterval(timerId);
