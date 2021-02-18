@@ -8,8 +8,9 @@ body {
   h1 {
     text-align: center;
   }
-  
+
   .container {
+    text-align: left;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
