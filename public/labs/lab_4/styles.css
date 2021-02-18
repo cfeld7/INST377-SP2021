@@ -10,13 +10,13 @@ body {
   }
 
   .container {
-    text-align: left;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
   }
   
   .container * {
+    text-align: left;
     box-sizing: border-box;
   }
   
