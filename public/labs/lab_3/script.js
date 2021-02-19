@@ -21,11 +21,13 @@ function loadPage() {
   document
     .querySelector('button.arrow.prev')
     .addEventListener('click', (event) => {
+      console.log("click left")
       goLeft();
     });
   document
     .querySelector('button.arrow.next')
     .addEventListener('click', (event) => {
+      console.log("click right")
       goRight();
     });
 }
