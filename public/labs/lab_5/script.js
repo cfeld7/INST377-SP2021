@@ -1,20 +1,19 @@
 function mapInit() {
-  // follow the Leaflet Getting Started tutorial here
+  const mymap = L.map('mapid').setView([76.9378, 38.9897], 13);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+  }).addTo(mymap);
   return map;
 }
 
 async function dataHandler(mapObjectFromFunction) {
   const searchInput = document.querySelector('.search');
   const suggestions = document.querySelector('.suggestions');
-
-  /* let places = [];
-fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
-.then(function(blob) {
-    return blob.json();
-})
-.then(function(data) {
- places = data;
-}) */
 
   let places = [];
   async function windowActions() {
@@ -28,12 +27,10 @@ fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
   function displayMatches(e) {
     e.preventDefault();
 
-    const matchArray = places.filter(function (place) {
-      return (
-        place.city.includes(searchInput.value) ||
+    const matchArray = places.filter((place) => (
+      place.city.includes(searchInput.value) ||
         place.zip.includes(searchInput.value)
-      );
-    });
+    ));
 
     console.log(matchArray);
 
