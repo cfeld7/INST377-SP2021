@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "package.json",
-=======
-  "name": "inst377-lab-support",
->>>>>>> 96e4ac27ab91141fb5c071c0d0b5cfc27c84d8e6
   "version": "1.0.0",
   "description": "Repository for INST377 Dynamic Web Applications Fall 2020 at UMD",
   "main": "index.js",
