@@ -6,7 +6,7 @@ function mapInit() {
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
+    accessToken: 'pk.eyJ1IjoiY29yZXlmZWxkIiwiYSI6ImNrbTJiemI2dzRtZ24yeHBtb2FidHhtcGUifQ._kub9whxiwmEunKWtLfjTA'
   }).addTo(mymap);
   return map;
 }
@@ -28,13 +28,15 @@ async function dataHandler(mapObjectFromFunction) {
     e.preventDefault();
 
     const matchArray = places.filter((place) => (
-      place.city.includes(searchInput.value) ||
-        place.zip.includes(searchInput.value)
+      place.city.includes(searchInput.value)
+        || place.zip.includes(searchInput.value)
     ));
 
-    console.log(matchArray);
 
-    const HTML = matchArray.reduce((string, place, index) => {
+    console.log(matchArray);
+    const topfive = matchArray.slice(0,5);
+
+    const HTML = topfive.reduce((string, place, index) => {
       string += `
             <li class="box">
                 <div class='name'>${place.name.toUpperCase()}</div>
@@ -47,6 +49,11 @@ async function dataHandler(mapObjectFromFunction) {
         `;
       return string;
     }, '');
+/* take top 5 and foreach object in top 5
+create a const that gets the coordinates for that item -- .coordinates is an object in the map api
+add marker to the map
+something else to add 3 lines in lecture 
+*/
 
     suggestions.innerHTML = HTML;
     console.log(HTML);
