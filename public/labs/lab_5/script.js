@@ -49,10 +49,10 @@ async function dataHandler(mapObjectFromFunction) {
         `;
       return string;
     }, '');
-/* take top 5 and foreach object in top 5
+    /* take top 5 and foreach object in top 5
 create a const that gets the coordinates for that item -- .coordinates is an object in the map api
 add marker to the map
-something else to add 3 lines in lecture 
+something else to add 3 lines in lecture
 */
 
     suggestions.innerHTML = HTML;
