@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title> Corey Feld Lab 5 </title>
+    <title>Natalie Selmer Lab 5</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <link rel = 'stylesheet' href = style.css>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-    <div class='columns'>
-        <div class='column'>
+<div class ='columns'>
+    <div class ='column'>
+        <h1 class ='title'>Natalie Selmer Lab 5</h1>
+        <div class ='subtitle'>Zip Code Food Search</div>
+            
+        <form action = "" id = 'form'>
+            <label for ='search'></label>
+            <input type='text' name='search' placeholder = 'search' class='search' id='search'>
+            <button type ='submit' id ='submit' class = 'button' >Submit</button>
+        </form>
 
-    <h1> Corey Feld Lab 5 </h1>
-
-    <form class='form'>
-        <div>
-            <label for='search'> Search for a ZIP code</label>
-        </div>
-        <label for='search'>Search</label>
-        <input type='text' name='search' id='search' class='search' placeholder='Enter Your ZIP Code'/>
-        <button type='submit' id='submit'>Submit</button>
-    </form>
-
-    <div class="card">
-        <div class="card-content">
-            <div class="content">
-                <ul class='suggestions'></ul>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <ul class='suggestions'></ul>
+                    </div>
+                </div>
             </div>
-        </div>
     </div> 
-</div>
 
-<div class='column'>
-    <div id="mapid"></div>
-</div>
+    <div class ="column">
+    <div id='mapid'></div>
+    </div>
 </div>
         <script src='script.js'></script>
-    
+        
     </body>
 </html>
