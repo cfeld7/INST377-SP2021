@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function jump() {
     clearInterval(downTimerId);
     isJumping = true;
-    upTimerId = setInterval(function () {
+    upTimerId = setInterval(() => {
       console.log(startPoint);
       console.log("1", doodlerBottomSpace);
       doodlerBottomSpace += 20;
@@ -120,11 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
       isGoingRight = false;
     }
     isGoingLeft = true;
-    leftTimerId = setInterval(function () {
+    leftTimerId = setInterval(() => {
       if (doodlerLeftSpace >= 0) {
-        console.log("going left");
+        console.log('going left');
         doodlerLeftSpace -= 5;
-        doodler.style.left = doodlerLeftSpace + "px";
+        doodler.style.left = `${doodlerLeftSpace}px`;
       } else moveRight();
     }, 20);
   }
@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
       isGoingLeft = false;
     }
     isGoingRight = true;
-    rightTimerId = setInterval(function () {
-      //changed to 313 to fit doodle image
+    rightTimerId = setInterval(() => {
+      // changed to 313 to fit doodle image
       if (doodlerLeftSpace <= 313) {
-        console.log("going right");
+        console.log('going right');
         doodlerLeftSpace += 5;
-        doodler.style.left = doodlerLeftSpace + "px";
+        doodler.style.left = `${doodlerLeftSpace}px`;
       } else moveLeft();
     }, 20);
   }
@@ -154,12 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // assign functions to keyCodes
   function control(e) {
-    doodler.style.bottom = doodlerBottomSpace + "px";
-    if (e.key === "ArrowLeft") {
+    doodler.style.bottom = `${doodlerBottomSpace}px`;
+    if (e.key === 'ArrowLeft') {
       moveLeft();
-    } else if (e.key === "ArrowRight") {
+    } else if (e.key === 'ArrowRight') {
       moveRight();
-    } else if (e.key === "ArrowUp") {
+    } else if (e.key === 'ArrowUp') {
       moveStraight();
     }
   }
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function gameOver() {
     isGameOver = true;
     while (grid.firstChild) {
-      console.log("remove");
+      console.log('remove');
       grid.removeChild(grid.firstChild);
     }
     grid.innerHTML = score;
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
       createDoodler();
       setInterval(movePlatforms, 30);
       jump(startPoint);
-      document.addEventListener("keyup", control);
+      document.addEventListener('keyup', control);
     }
   }
   start();
