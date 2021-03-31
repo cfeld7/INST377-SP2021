@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
           platforms.shift();
           console.log(platforms);
           score++;
-          var newPlatform = new Platform(600);
+          let newPlatform = new Platform(600);
           platforms.push(newPlatform);
         }
       });
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearInterval(rightTimerId);
   }
 
-  //assign functions to keyCodes
+  // assign functions to keyCodes
   function control(e) {
     doodler.style.bottom = doodlerBottomSpace + "px";
     if (e.key === "ArrowLeft") {
